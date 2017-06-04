@@ -11,7 +11,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><router-link to="/">Home</router-link></li>
-                        <li><router-link to="/cart">Cart<span class="navbar-new">2</span></router-link></li>
+                        <li><router-link to="/cart">Cart<span class="navbar-new">{{todos}}</span></router-link></li>
                         <li v-show="!token" ><router-link to="/login">Login</router-link></li>
                         <li class="dropdown" v-show="token">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.name }}<b class="caret"></b></a>
@@ -25,6 +25,27 @@
             </div>
         </div>
         <div class="container">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>名称</th>
+                    <th>价格</th>
+                    <th>数量</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr v-for="p in products">
+                    <td>{{ p.title }}</td>
+                    <td>{{ p.price }}</td>
+                    <td>{{ p.inventory }}</td>
+
+                    <button :disabled="!p.inventory"
+                            @click="addToCart(p)" class="btn btn-info">Add to cart</button>
+                </tr>
+                </tbody>
+            </table>
+
             <router-view></router-view>
         </div>
     </div>
@@ -45,6 +66,8 @@
             ...mapGetters({
                 user: 'user',
                 token: 'token',
+                todos: 'todos',
+                products: 'allProducts'
             }),
           },
         watch:{
@@ -53,9 +76,16 @@
         methods: {
 //            ...mapActions(['logout']),  //mapAction 集成分发 Action
             logout: function(){
-                this.$store.dispatch('logout');
+                this.$store.commit('logout');
                 this.$router.push({ name: 'login' });
+            },
+            addToCart: function (p){
+                this.$store.commit('addToCart', p);
             }
+
+        },
+        created () {
+            this.$store.commit('getAllProducts');
         }
     }
 </script>

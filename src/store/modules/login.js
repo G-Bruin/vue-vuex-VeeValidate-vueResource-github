@@ -33,8 +33,8 @@ const actions = {
         console.log('aaaa');
     },
 
-    title(state) {
-        state.commit(types.TITLE, 100);
+    title(state, data) {
+        state.commit(types.TITLE, data);
     }
 
 };
@@ -42,7 +42,7 @@ const actions = {
 const mutations = {
 
     [types.LOGIN]: (state, data) => {
-        console.log(state.user = data.user);
+        state.user = data.user;
         state.token = data.token;
     },
 
@@ -54,6 +54,7 @@ const mutations = {
     },
 
     [types.TITLE]: (state, data) => {
+        console.log(data)
         state.todos = data;
     },
 }

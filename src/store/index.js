@@ -7,12 +7,14 @@ Vue.use(Vuex)
 import * as types from './types';
 import * as actions from './actions';
 import login from './modules/login';
+import production from './modules/production';
 
 
 const store = new Vuex.Store({
     actions,
     modules: {
-        login
+        login,
+        production
     },
 })
 export {store}
