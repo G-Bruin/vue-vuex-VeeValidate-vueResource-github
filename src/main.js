@@ -3,15 +3,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
-import VueResource from 'vue-resource'
-Vue.use(VueResource)
-
 import {store} from './store/index'
 import routes from './router'
 
 import {VeeValidate, Veeconfig} from './validation';
-
-window.Vue = require('vue')
 
 const router = new VueRouter({
   mode:'history',

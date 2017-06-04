@@ -23,7 +23,7 @@
 </template>
 
 <script>
-//    import apiRequest from '../api/index.js';
+    import apiRequest from '../api/index.js';
     import { mapActions, mapGetters} from 'vuex';
 
     export default {
