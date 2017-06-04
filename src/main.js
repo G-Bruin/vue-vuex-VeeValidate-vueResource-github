@@ -15,7 +15,7 @@ window.Vue = require('vue')
 
 const router = new VueRouter({
   mode:'history',
-  routes // short for routes: routes
+  routes
 })
 
 router.beforeEach((to, from, next) => {
