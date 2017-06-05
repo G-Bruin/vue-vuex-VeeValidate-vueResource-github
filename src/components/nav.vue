@@ -26,6 +26,8 @@
         </div>
         <div class="container">
             <table class="table table-hover">
+                <caption>商品数据</caption>
+
                 <thead>
                 <tr>
                     <th>名称</th>

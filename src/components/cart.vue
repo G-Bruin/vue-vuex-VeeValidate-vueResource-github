@@ -1,6 +1,7 @@
 <template>
     <div>
         <table class="table table-hover">
+            <caption>购物车数据</caption>
             <thead>
             <tr>
                 <th>名称</th>
@@ -10,10 +11,11 @@
             </thead>
             <tbody>
 
-            <tr v-for="p in products">
+            <tr v-for="p in products"  >
                 <td>{{ p.title }}</td>
                 <td>{{ p.price }}</td>
                 <td>{{ p.quantity }}</td>
+                <button @click="removeFromCart(p)" class="btn btn-warning">Remove to cart</button>
             </tr>
             </tbody>
             <p>Total: {{ total }}</p>
@@ -49,15 +51,11 @@
             }
         },
         methods: {
-            login: function(){
-                let params = {'phone' : this.phone, 'password' : this.password};
-//                apiRequest({
-//                    'url':'/v1/order/createOrder',
-//                    'method':'POST',
-//                    'params': params
-//                }).then( (response) => {
-//                     console.log(response);
-//                });
+            removeFromCart: function(p){
+                if(p.quantity > 0){
+                    this.$store.dispatch('removeFromCart', p);   //删除购物车
+                    this.$store.dispatch('add_to_production', p);  //将商品重新添加到库
+                }
             }
         }
     }

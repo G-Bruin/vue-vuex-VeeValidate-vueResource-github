@@ -24,6 +24,13 @@ const actions = {
             });
         }
     },
+    add_to_production(state, product) {
+        state.commit(types.ADD_TO_PRODUCTION, {
+            id: product.id,
+            quantity: product.quantity,
+        })
+
+    }
 }
 
 // mutations
@@ -36,6 +43,13 @@ const mutations = {
     [types.ADD_TO_CART]: (state, { id }) => {
         state.all.find(p => p.id === id).inventory--
     },
+
+    [types.ADD_TO_PRODUCTION]: (state, { id }) => {
+        const record = state.all.find(p => p.id === id)
+        if (record) {
+            record.inventory++
+        }
+    }
 }
 
 export default {

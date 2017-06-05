@@ -13,3 +13,7 @@ export const GET_All_PRODUCTION = 'getAllProducts';
 export const ADD_TO_CART = 'addToCart';
 
 export const ADD_TO_CART_MAIN = 'addToCartMain';
+
+export const REMOVE_FROM_CART_MAIN = 'removeFromCartMain';
+
+export const ADD_TO_PRODUCTION = 'add_to_production';

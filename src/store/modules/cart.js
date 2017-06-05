@@ -33,8 +33,13 @@ const actions = {
         }
     },
 
-
-
+    removeFromCart(state, product){
+        if (product.quantity > 0) {
+            state.commit(types.REMOVE_FROM_CART_MAIN, {
+                id: product.id,
+            })
+        }
+    }
 }
 
 const mutations = {
@@ -52,6 +57,17 @@ const mutations = {
         }
         state.getTotal++
     },
+
+    [types.REMOVE_FROM_CART_MAIN](state, { id }){
+        const record = state.added.find(p => p.id === id)
+        if (record) {
+            record.quantity--
+            if(record.quantity == 0){
+                state.added.splice(record, 1)
+            }
+        }
+        state.getTotal--
+    }
 }
 
 export default {
