@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="44b01b67-ff77-4543-80c5-e4ebbdd8dcab" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="new-cart.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,8 +29,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor vertical-scroll-proportion="0.42939815">
-                <caret line="46" column="3" selection-start-line="46" selection-start-column="3" selection-end-line="46" selection-end-column="3" />
+              <first_editor vertical-scroll-proportion="0.6643519">
+                <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -285,7 +286,13 @@
       <option name="project" value="LOCAL" />
       <updated>1496647237557</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="购物车数据删除操作">
+      <created>1496647260123</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1496647260123</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -725,8 +732,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor vertical-scroll-proportion="0.42939815">
-            <caret line="46" column="3" selection-start-line="46" selection-start-column="3" selection-end-line="46" selection-end-column="3" />
+          <first_editor vertical-scroll-proportion="0.6643519">
+            <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
             <folding />
           </first_editor>
           <second_editor />

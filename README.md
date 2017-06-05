@@ -49,7 +49,7 @@ index.js 使用vue-resource封装request请求模块
 shop.js 定义商品数据信息供使用
 ```
 
-#### 4. 数据校验模块
+#### 5. 数据校验模块
 ```
 使用 vee-validate 进行数据校验，里面涉及初步基本使用，
 对应其他规则请移步[github](https://github.com/logaretm/vee-validate)
