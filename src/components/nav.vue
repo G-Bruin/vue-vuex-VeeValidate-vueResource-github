@@ -26,7 +26,7 @@
         </div>
         <div class="container">
             <table class="table table-hover">
-                <caption>商品数据</caption>
+                <caption id="aaaa">商品数据</caption>
 
                 <thead>
                 <tr>
@@ -84,6 +84,7 @@
             addToCart: function (p){
                 if(!this.token){
                     this.$router.push({ name: 'login' });
+                    return;
                 }
                 this.$store.dispatch('addToCart', p);
             }

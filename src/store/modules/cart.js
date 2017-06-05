@@ -63,7 +63,11 @@ const mutations = {
         if (record) {
             record.quantity--
             if(record.quantity == 0){
-                state.added.splice(record, 1)
+                for(let i = 0; i<state.added.length; i++){
+                    if(state.added[i].id == id){
+                        state.added.splice(i, 1)
+                    }
+                }
             }
         }
         state.getTotal--
