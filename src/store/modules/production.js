@@ -2,6 +2,7 @@
  * Created by bruin on 2017/6/4.
  */
 import * as shop from '../../api/shop'
+import * as types from '../types'
 
 const state = {
     all: []
@@ -14,27 +15,27 @@ const getters = {
 
 const actions = {
     getAllProducts (state) {
-        state.commit(getAllProducts);
+        state.commit(types.GET_All_PRODUCTION);
     },
     addToCart (state, product) {
         if (product.inventory > 0) {
-            state.commit(addToCart, {
+            state.commit(types.ADD_TO_CART, {
                 id: product.id
             });
         }
     },
-
 }
 
 // mutations
 const mutations = {
-    getAllProducts(state){
+
+    [types.GET_All_PRODUCTION]: (state) => {
         state.all = shop._products;
     },
 
-    addToCart(state, { id }) {
+    [types.ADD_TO_CART]: (state, { id }) => {
         state.all.find(p => p.id === id).inventory--
-    }
+    },
 }
 
 export default {

@@ -3,7 +3,8 @@
  */
 import * as types from './types';
 
-export function logout(store){
-    store.commit(types.LOGOUT);
+export function logout(state){
+    state.commit(types.LOGOUT);
 }
+
 

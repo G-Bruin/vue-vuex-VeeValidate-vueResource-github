@@ -13,7 +13,7 @@ const routes = [
                 //购物车页面
                 name: 'cart',
                 path: '/cart',
-                component: require("./components/login2.vue"),
+                component: require("./components/cart.vue"),
                 meta: { requiresAuth: true }
             },
             {

@@ -11,7 +11,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><router-link to="/">Home</router-link></li>
-                        <li><router-link to="/cart">Cart<span class="navbar-new">{{todos}}</span></router-link></li>
+                        <li><router-link to="/cart">Cart<span class="navbar-new">{{getTotal}}</span></router-link></li>
                         <li v-show="!token" ><router-link to="/login">Login</router-link></li>
                         <li class="dropdown" v-show="token">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.name }}<b class="caret"></b></a>
@@ -66,7 +66,7 @@
             ...mapGetters({
                 user: 'user',
                 token: 'token',
-                todos: 'todos',
+                getTotal: 'getTotal',
                 products: 'allProducts'
             }),
           },
@@ -80,12 +80,15 @@
                 this.$router.push({ name: 'login' });
             },
             addToCart: function (p){
-                this.$store.commit('addToCart', p);
+                if(!this.token){
+                    this.$router.push({ name: 'login' });
+                }
+                this.$store.dispatch('addToCart', p);
             }
 
         },
         created () {
-            this.$store.commit('getAllProducts');
+            this.$store.dispatch('getAllProducts');
         }
     }
 </script>
