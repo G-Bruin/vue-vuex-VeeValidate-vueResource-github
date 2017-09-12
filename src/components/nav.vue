@@ -47,7 +47,6 @@
                 </tr>
                 </tbody>
             </table>
-
             <router-view></router-view>
         </div>
     </div>
@@ -61,7 +60,6 @@
     export default {
         data () {
             return {
-
             }
         },
         computed: {
@@ -71,6 +69,11 @@
                 getTotal: 'getTotal',
                 products: 'allProducts'
             }),
+
+            approval () {
+                this.isApproval = false
+            }
+
           },
         watch:{
 
